@@ -26,5 +26,5 @@ Hazard Game Engine, created in C++, draws inspiration from Unity Engine seamless
 – **Audio Support**: In built audio support (.mp3, .wav etc.)  
 – **Mouse and Keyboard Support**: In built detailed input system for keyboard and mouse (press, hold, release, etc.)  
 – **Open-Source**: Anyone can modify, expand and use for their cases without any issues.  
-***
+
 **Technology Used**: C++, OpenGL, FreeType, GLM.
