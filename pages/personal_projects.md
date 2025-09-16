@@ -5,16 +5,12 @@
   display: flex;
   align-items: center;
 }
-.centered-image {
-  width: 150px;
-  margin-right: 15px;
-}
 </style>
 
 ## Hazard Engine:
 
 <div class="centered-container">
-  <img src="../assets/images/hazard_engine.png" alt="Hazard Engine" class="centered-image">
+  <img src="../assets/images/hazard_engine.png" alt="Hazard Engine">
 <div>
 
 ### About:
