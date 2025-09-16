@@ -82,7 +82,7 @@ I’m thrilled to share a recent project I’ve been working on—an isometric p
 <div class="image-container">
 <img src="../assets/images/gs_1.jpg" alt="Screenshot" class="image-frame">
 <img src="../assets/images/gs_2.jpg" alt="Screenshot" class="image-frame">
-<img src="../assets/images/gs_3.png" alt="Screenshot" class="image-frame">
+<img src="../assets/images/gs_3.jpg" alt="Screenshot" class="image-frame">
 </div>
 
 **[Gameplay Footage (Youtube)](https://youtu.be/G75rH3-bBBM)**
