@@ -5,16 +5,22 @@
   display: flex;
   align-items: center;
 }
+.centered-image {
+  width: 150px;
+  margin-right: 15px;
+}
 </style>
 
-## Hazard Engine
+## Hazard Game Engine
 
 <div class="centered-container">
   <img src="../assets/images/hazard_engine.png" alt="Hazard Engine" class="centered-image">
 </div>  
 
 ### About:
-Hazard Game Engine, meticulously crafted in C++, draws inspiration from Unity Engine seamlessly incorporating familiar syntaxes for enhanced user navigation. Designed as my passion project, it serves as a professional showcase of skills, offering a dynamic 2D game development environment.
+Hazard Game Engine, created in C++, draws inspiration from Unity Engine seamlessly incorporating familiar syntaxes for enhanced user navigation. Designed as my passion project, it serves as a professional showcase of skills, offering a dynamic 2D game development environment.
+
+### Technology Used: C++, OpenGL, FreeType, GLM.
 
 ### Features:
 – **Unity Like Syntax**: Has similar syntax and features compare to Unity game engine.  
