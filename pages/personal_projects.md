@@ -4,27 +4,18 @@
 .small-image {
   width: 150px;
 }
-.video-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.video-frame {
-  width: auto;
-  aspect-ratio: 16 / 9;
-}
 </style>
 
 ## Hazard Game Engine
 
 <div>
 <img src="../assets/images/hazard_engine.png" alt="Hazard Engine" class="small-image">
-<iframe class="video-frame" src="https://youtu.be/IIWMY1Wx3PQ" frameborder="0" allowfullscreen></iframe>
 </div>
 
 #### About:
 Hazard Game Engine, created in C++, draws inspiration from Unity Engine seamlessly incorporating familiar syntaxes for enhanced user navigation. Designed as my passion project, it serves as a professional showcase of skills, offering a dynamic 2D game development environment.
+
+**[Gameplay Footage (Youtube)](https://youtu.be/IIWMY1Wx3PQ)**
 
 #### Features:
 – **Unity Like Syntax**: Has similar syntax and features compare to Unity game engine.  
