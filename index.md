@@ -17,7 +17,7 @@ Hi, I am a passionate professional game developer who loves creating games. You 
 
 Got an interesting project? let's connect : [Gmail](mailto:gamedev.abhijit@gmail.com) - [Github](https://github.com/gamdevAbhi) - [LinkedIn](https://linkedin.com/in/abhijit-biswas-dev)
 
-### Skills
+## Skills
 
 - **Programming Languages**: C/C++, C#, Python.
 - **Framework Experience**: Unity Game Engine, Unreal Engine, OpenGL, Git & Github.
@@ -30,10 +30,8 @@ Got an interesting project? let's connect : [Gmail](mailto:gamedev.abhijit@gmail
   Sept 2024 – Present  
   Pune, Maharashtra
 
-  - Responsible for creating automated modular code and tools in Unity to reduce development time and eliminate tedious, repetitive tasks.
-  - Created a Mouse Input System to automate input handling across multiple platforms. Tap Behavior and Drag Behavior features enabled faster game development without extra code, making the process editor-based for quick debugging and changes.
-  - Worked on a Unity-based content status tracker with GUI, allowing developers to assign/remove themselves from projects, mark current status by phase (based on client-defined phases), and automatically add content to Addressables groups.
-  - Developed 40+ AR-based games using Vuforia to create immersive experiences for users.
-  - Worked on 50+ 2D mini-games, added procedural generation to 3D games, and customized client projects to meet specific requirements.
-  - Assisted teammates with problem-solving and workflow optimization. Enhanced and maintained existing systems, adding new features and fixing issues.
-  - Continuously explored new technologies to improve gameplay and streamline development processes.
+  - **Automating Processes**: Responsible for creating modular code and tools in Unity to automate taskes to reduce development time.
+  - **Creating Wrapper For Input System**: Created a Meus Input System to make easier input handling across multiple platforms without writing logic for multiple platforms.
+  - **Real-Time Content Tracker GUI in Unity + AWS**: Created content status tracker with GUI in Unity for managing multiple contents and developers, with real-time update across multiple developers using AWS.
+  - **Developed Games**: Developed 40+ AR-based mini-games using Vuforia and 50+ 2D mini-games to create immersive experiences for users.
+  - **Assisting Teammates and Joines**: Assisted new teammates with problem-solving and workflow optimization. 
