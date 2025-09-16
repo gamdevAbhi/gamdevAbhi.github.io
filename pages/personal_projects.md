@@ -90,6 +90,13 @@ I’m thrilled to share a recent project I’ve been working on—an isometric p
 #### About:
 It is a 2D shooter game that offers endless session where player will fight against terrorists and save the city. Player can level up by scoring higher scores. The game has various difficulty and players can buy, upgrade their weapons. The game has also various power ups and can be obtained from killing terrorists.
 
+#### Features:
+– Smooth gameplay experience
+– Endless game session
+– Different types of guns
+– Upgrading system
+– Different difficulties
+
 #### Link: 
 - **Download**: [itch.io](https://abhijit-biswas.itch.io/ghost-sniper)
 
@@ -100,5 +107,28 @@ It is a 2D shooter game that offers endless session where player will fight agai
 #### About:
 It is 2D defence game with scoring system. The game has many different types of enemy with different type of powers. It has a upgrading system for the cannon and spells. It also has day night cycle.
 
+#### Features:
+– Day Night Cycle
+– 4 Different Enemy With Their Own Ability
+– 3 Unique Spell
+– Upgrade Mechanism
+– 2D Cartoonish Style Game
+
 #### Link:
 - **Download**: [itch.io](https://abhijit-biswas.itch.io/cannon-fist)
+
+## StrFI
+
+<img src="../assets/images/strfi_1.jpg" alt="Screenshot">
+
+#### About:
+It generate images/videos drawn with characters based on the provided images/videos. It is written in Python so it can work in any python supported platform like Windows, Mac, Linux. It can work and output both grayscale and RGB format images/videos.
+
+#### Features:
+– Support both images and videos.
+– Support multiple format like .mp4, .jpg, .png and more.
+– Can generate grayscale and RGB both format.
+– Uses threading so real time process information.
+
+#### Links:
+- **Source Code**:  [GitHub](https://github.com/gamdevAbhi/StrFI)
