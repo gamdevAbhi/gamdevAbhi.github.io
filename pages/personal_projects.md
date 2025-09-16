@@ -18,9 +18,8 @@
 
 ## Hazard Game Engine
 
-<img src="../assets/images/hazard_engine.png" alt="Hazard Engine" class="small-image">
-
 <div>
+<img src="../assets/images/hazard_engine.png" alt="Hazard Engine" class="small-image">
 <iframe class="video-frame" src="https://youtu.be/IIWMY1Wx3PQ" frameborder="0" allowfullscreen></iframe>
 </div>
 
