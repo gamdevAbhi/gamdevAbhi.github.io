@@ -13,7 +13,7 @@
 
 ### About Me,
 
-Hi, I am a passionate professional game developer who loves creating games. You can connect with me . I have experience in 2D and 3D game development. Proficient in C/C++, C#, and Python.\
+Hi, I am a passionate professional game developer who loves creating games. You can connect with me . I have experience in 2D and 3D game development. Proficient in C/C++, C#, and Python.
 
 Got an interesting project? let's connect : [Gmail](mailto:gamedev.abhijit@gmail.com) - [Github](https://github.com/gamdevAbhi) - [LinkedIn](https://linkedin.com/in/abhijit-biswas-dev)
 
@@ -35,3 +35,8 @@ Got an interesting project? let's connect : [Gmail](mailto:gamedev.abhijit@gmail
   - **Real-Time Content Tracker GUI in Unity + AWS**: Created content status tracker with GUI in Unity for managing multiple contents and developers, with real-time update across multiple developers using AWS.
   - **Developed Games**: Developed 40+ AR-based mini-games using Vuforia and 50+ 2D mini-games to create immersive experiences for users.
   - **Assisting Teammates and Joines**: Assisted new teammates with problem-solving and workflow optimization. 
+
+## Education
+
+- **Diploma in Computer Science and Technology CTS (The Calcutta Technical School)** - (2021-2024)
+  - CGPA - 7.9s
