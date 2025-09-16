@@ -11,6 +11,8 @@
 
 *Game Programmer and Tool Developer*
 
+- [DevLogs](pages/devlog.md) | [Personal Projects](pages/personal_projects.md) | [Resume](https://drive.google.com/file/d/1QOzuGEbz1VH8dheOF42t5kJcsphgzjn_/view?usp=drive_link)
+
 ### About Me,
 
 Hi, I am a passionate professional game developer who loves creating games. You can connect with me . I have experience in 2D and 3D game development. Proficient in C/C++, C#, and Python.
