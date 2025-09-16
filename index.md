@@ -9,7 +9,7 @@
 
 *Game Programmer and Tool Developer*
 
-[DevLogs](pages/devlog.md) | [Personal Projects](pages/personal_projects.md) | [Resume](https://drive.google.com/file/d/1QOzuGEbz1VH8dheOF42t5kJcsphgzjn_/view?usp=drive_link)
+[Dev Logs](pages/devlog.md) | [Personal Projects](pages/personal_projects.md) | [Resume](https://drive.google.com/file/d/1QOzuGEbz1VH8dheOF42t5kJcsphgzjn_/view?usp=drive_link)
 
 <img src="assets\images\profile_image.jpeg" alt="Profile Image" class="float-right">
 
