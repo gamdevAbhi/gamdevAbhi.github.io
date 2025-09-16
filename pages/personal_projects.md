@@ -4,6 +4,24 @@
 .small-image {
   width: 150px;
 }
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.image-frame {
+  width: 32%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.image-frame-2 {
+  width: 50%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 </style>
 
 ## Hazard Game Engine
@@ -29,12 +47,14 @@ Hazard Game Engine, created in C++, draws inspiration from Unity Engine seamless
 
 ## Isometric Biome Generator
 
-<div>
-<img src="../assets/images/ibg_1.jpg" alt="Screenshot">
-<img src="../assets/images/ibg_2.jpg" alt="Screenshot">
-<img src="../assets/images/ibg_3.jpg" alt="Screenshot">
-<img src="../assets/images/ibg_4.jpg" alt="Screenshot">
-<img src="../assets/images/ibg_5.jpg" alt="Screenshot">
+<div class="image-container">
+<img src="../assets/images/ibg_1.jpg" alt="Screenshot" class="image-frame">
+<img src="../assets/images/ibg_2.jpg" alt="Screenshot" class="image-frame">
+<img src="../assets/images/ibg_3.png" alt="Screenshot" class="image-frame">
+</div>
+<div class="image-container">
+<img src="../assets/images/ibg_4.png" alt="Screenshot" class="image-frame-2">
+<img src="../assets/images/ibg_5.jpg" alt="Screenshot" class="image-frame-2">
 </div>
 
 #### About:
