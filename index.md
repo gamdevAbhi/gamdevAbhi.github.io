@@ -39,4 +39,4 @@ Got an interesting project? let's connect : [Gmail](mailto:gamedev.abhijit@gmail
 ## Education
 
 - **Diploma in Computer Science and Technology CTS (The Calcutta Technical School)** - (2021-2024)
-  - CGPA - 7.9s
+  - CGPA - 7.9
