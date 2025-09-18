@@ -1,6 +1,7 @@
 *Game Programmer and Tool Developer*
 
 ## Contents
+- [Getting Started](#getting-started)
 - [Core Classes](#core-classes)
   - [GameLoop](#gameloop)
   - [Input](#input)
