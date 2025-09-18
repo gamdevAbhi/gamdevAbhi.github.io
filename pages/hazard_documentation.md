@@ -7,7 +7,7 @@
 
 ## Core Classes
 
-#### GameLoop
+### GameLoop
 
 ```cpp
 void Engine::GameLoop::initialize(std::string title)
@@ -33,7 +33,7 @@ x = window width
 y = window height  
 It returns the current window size of the application.  
 
-#### Input
+### Input
 
 ```cpp
 enum KeyStatus {KEY_NONE, KEY_PRESS, KEY_HOLD, KEY_RELEASE}
@@ -61,7 +61,7 @@ glm::vec2 Engine::Input::getMousePos()
 ```
 **returns** - the current position of the mouse in that frame.
 
-#### Time
+### Time
 
 ```cpp
 float Engine::Time::getTimeScale()
@@ -88,7 +88,7 @@ int Engine::Time::getLastFPS()
 ```
 **returns** - the previous frame per second.
 
-#### UI
+### UI
 
 ```cpp
 glm::vec2 Engine::UI::getResolution()
