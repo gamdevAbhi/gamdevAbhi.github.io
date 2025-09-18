@@ -138,87 +138,87 @@ this function create a relation between two tags. if relation between two tags e
 Engine::Actor* Engine::Actor::createActor(std::string name)
 ```
 **returns** - a pointer to a new actor with the name.  
-It creates a new actor with the name. Every actor will have Transform component if creates in this way.
+It creates a new actor with the name. Every actor will have **Transform** component if creates in this way.
 ```cpp
 Engine::Actor* Engine::Actor::createUIActor(std::string name)
 ```
 **returns** - a pointer to a new UI actor with the name.  
-It creates a new UI actor with the name. Every actor will have RectTransform component if creates in this way.
+It creates a new UI actor with the name. Every actor will have **RectTransform** component if creates in this way.
 ```cpp
 Engine::Actor* Engine::Actor::getActor(std::string name)
 ```
 **returns** - a pointer to the actor with the name.  
-It finds actor with the name and return it. If no actor found with that name it will return nullptr.
+It finds actor with the name and return it. If no actor found with that name it will return **nullptr**.
 
-```
+```cpp
 std::vector<Engine::Actor*> Engine::Actor::getActors(std::string name)
 ```
 **returns** - a vector of pointers of the actors with the name.  
 It finds all the actors with the name and return it.
 
-```
+```cpp
 int Engine::Actor::getActorCount()
 ```
 **returns** - the number of actors exist in the game.
 
-```
+```cpp
 void Engine::Actor::clearActors()
 ```
-It destroy all the actors which manualDestroy set to false before the next frame.
+It destroy all the actors which **manualDestroy** set to false before the next frame.
 
-```
+```cpp
 std::string this->getName()
 ```
 **returns** - the actor’s name.
 
-```
+```cpp
 void this->setName(std::string name)
 ```
-set the actor’s name.
+**name** - set the actor’s name.
 
-```
+```cpp
 bool this->getActive()
 ```
 **returns** - the actor’s active status.
 
-```
+```cpp
 void this->setActive(bool status)
 ```
 **status** - set the actor’s active status.  
 **Note** - if actor’s active set to false then the **update()**, **lateUpdate()**, **fixedUpdate()** will not be called and other things like collision detection, rendering will also be ignored.
 
-```
+```cpp
 bool this->getManualDestroyStatus()
 ```
 **returns** - the actor’s manual destroy status.
 
-```
+```cpp
 void this->setManualDestroyStatus(bool status)
 ```
 **status** - set the actor’s manual destroy status.  
 **Note** - if actor’s manual destroy status set to true then the actor will only be destroyed by **setDestroy()** call or after game loop is break.
 
-```
+```cpp
 void this->setDestroy(bool childIncluded)
 ```
 the actor will be destroyed before the next frame start.  
-**Note** - if the **childIncluded** is false then only the actor will be destroyed and it’s child’s parent will nullptr else all childs also be be destroyed.
+**Note** - if the **childIncluded** is false then only the actor will be destroyed and it’s child’s parent will **nullptr** else all childs also be be destroyed.
 
-```
+```cpp
 // T must be derived from Engine::Component class
 T* this->addComponent<T>() 
 ```
 **returns** - a pointer of the created component.  
 It creates the component and attach it to the actor. After adding the component **Start()** function is called.
 
-```
+```cpp
 // T must be derived from Engine::Component class
 T* this->getComponent<T>()
 ```
 **returns** - a pointer of the added component from the actor.  
-It finds the component added to the actor. if no component is found then nullptr is returned.
+It finds the component added to the actor. if no component is found then **nullptr** is returned.
 
-```
+```cpp
 // T must be derived from Engine::Component class
 std::vector<T*> this->getComponents<T>() 
 ```
@@ -227,9 +227,118 @@ It finds the components added to the actor.
 
 ### Component
 
+**Component** - It’s an abstract class and base class for all classes which can be added to actor. An actor can have multiple components. Components are special because they have some special functions that directly called in games loop.
+
+```cpp
+Engine::Actor* this->getActor()
+```
+**returns** – the actor this component attached to.
+
+```cpp
+void this->setDestroy()
+```
+set the component to destroy before next frame.
+
+**Special virtual functions which called directly from games loop:**
+
+```cpp
+void Engine::Component::start()
+```
+**Call Time** - when the component is added to an actor.
+
+```cpp
+void Engine::Component::update()
+```
+**Call Time** - this function is called in every frame.
+
+```cpp
+void Engine::Component::lateUpdate()
+```
+**Call Time** - this function is called after all update functions are executed.
+
+```cpp
+void Engine::Component::fixedUpdate()
+```
+**Call Time** - this function is called every fixed time (default 0.2 seconds).
+
+```cpp
+void Engine::Component::onTransformChanged()
+```
+**Call Time** - this function is called if transform matrix is changed (if used wrongly then endless loop may occur).
+
+```cpp
+void Engine::Component::onCollisionEnter(Engine::Collider* collider)
+```
+**Call Time** - this function is called when collision happend.
+
+```cpp
+void Engine::Component::onCollisionStay(Engine::Collider* collider)
+```
+**Call Time** - this function is called if collision stay for more than one frame.
+
+```cpp
+void Engine::Component::onCollisionExit(Engine::Collider* collider)
+```
+**Call Time** - this function is called if two objects collision is finished.
+
+```cpp
+void Engine::Component::onTriggerEnter(Engine::Collider* collider)
+```
+**Call Time** - this function is called when collision happend & trigger event can applicable.
+
+```cpp
+void Engine::Component::onTriggerStay(Engine::Collider* collider)
+```
+**Call Time** - this function is called if collision stay for more than one frame & trigger event can applicable.
+
+```cpp
+void Engine::Component::onTriggerExit(Engine::Collider* collider)
+```
+**Call Time** - this function is called if two objects collision is finished & trigger event can applicable.
+
+```cpp
+void Engine::Component::onDestroy()
+```
+**Call Time** - this function is called when the component is going to destroy.
+
 ### Collider
 
+```cpp
+int this->getTag()
+```
+**returns** - the current tag of the collider.
+
+```cpp
+int this->setTag(int value)
+```
+**value** - set the current tag of the collider.
+
+```cpp
+tuple<bool, bool> this->getFixed()
+```
+**returns** - the current status of the collision effect respective to x axis and y axis.
+
+```cpp
+void this->setFixed(bool x, bool y)
+```
+**x, y** - set the current status of the collision effect respective to x axis and y axis. If x axis and y axis set to true then the collider will behave like a static object.
+
+```cpp
+void this->setTriiger(bool isTrigger)
+```
+**isTrigger** - set the current trigger status of the collider. If trigger is true then trigger event will be called else collision event.
+
 ### Renderer
+
+```cpp
+int this->getOrder()
+```
+**returns** - the order of the renderer.
+
+```cpp
+void this->setOrder(int order)
+```
+**order** - set the order of the renderer. Higher ordered renderer will be drawn first then the lower ordered renderer will be drawn.
 
 ## Resource Classes
 
