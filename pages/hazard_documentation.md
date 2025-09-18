@@ -12,7 +12,7 @@
 ```cpp
 void Engine::GameLoop::initialize(std::string title)
 ```
-***title** - it’s the game window title.  
+**title** - it’s the game window title.  
 It’s called before calling any engine features. It initialize the engine and it’s necessary components like collider manager, rendering manager, window, inputs etc.
 
 ```cpp
@@ -28,8 +28,62 @@ It makes the games loop to break. Uses for exiting the application.
 ```cpp
 glm::ivec2 Engine::GameLoop::getCurrentWindowSize()
 ```
-**Return** - the window size.
-x = window width
-y = window height.
-It returns the current window size of the application.
+**returns** - the window size.  
+x = window width  
+y = window height  
+It returns the current window size of the application.  
 
+#### Input
+
+```cpp
+enum KeyStatus {KEY_NONE, KEY_PRESS, KEY_HOLD, KEY_RELEASE}
+```
+**KEY_NONE** – if the specific key has no pressing event then this return.  
+**KEY_PRESS** – if the specific key is pressed then this return.  
+**KEY_HOLD** – if the specific key is hold then this return.  
+**KEY_RELEASE** – if the specific key is release then this return.  
+
+```cpp
+Engine::Input::KeyStatus Engine::Input::getKeyStatus(int key)
+// key value is the relative to glfw keys eg. GLFW_KEY_A value is for A key.
+```
+**returns** – the current status of the key in that frame.
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+#### Time
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+#### UI
+
+```cpp
+void Engine::GameLoop::begin()
+```
+
+```cpp
+void Engine::GameLoop::begin()
+```
