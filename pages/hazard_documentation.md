@@ -1,6 +1,6 @@
 *Game Programmer and Tool Developer*
 
-#### Getting Started:
+### Getting Started
 
 | Requirements | Installation | Installation | Projects |
 | - GNU Compiler at least 17 version.<br> - Visual Studio Code is recommended. | - Download the engine source code from [itch.io](https://abhijit-biswas.itch.io/hazard-game-engine) or [github](https://github.com/gamdevAbhi/Hazard-Game-Engine.git).<br> - Extract the file to your location. | - Make sure to change the compiler path in “.vscode/tasks.json“ (if using vs code). | Cosmic Mayhem - [Source Code](https://github.com/gamdevAbhi/Cosmic-Mayhem) (Github)|
@@ -99,3 +99,98 @@ glm::vec2 Engine::UI::getResolution()
 void Engine::UI::setResolution(glm::vec2 size)
 ```
 **size** - set the current UI resolution. default value is the window size.
+
+## Management Classes
+
+### RendererManager
+
+```cpp
+int Engine::RendererManager::getLastRendererCount()
+```
+**returns** - the last total number of renderer needed to drawn.
+
+### ColliderManager
+
+```cpp
+int Engine::ColliderManager::getTag(std::string tagName)
+```
+**returns** - the tag value of the tag.
+
+```cpp
+int Engine::ColliderManager::addTag(std::string tagName, bool selfRelation)
+```
+**returns** - the tag value of the added tag.  
+this function create a tag based on the tag name and assign a value. if **selfRelation** is true then two collider with same tag will interact.  
+
+```cpp
+void Engine::ColliderManager::addRelation(int tag1, int tag2)
+```
+this function create a relation between two tags. if relation between two tags exist then colliders with tags will interact.
+
+## Actor and Component Classes
+
+<img src="../assets/images/hz_acr.jpg" alt="Screenshot">
+<img src="../assets/images/hz_cs.jpg" alt="Screenshot">
+
+### Actor
+
+### Component
+
+### Collider
+
+### Renderer
+
+## Resource Classes
+
+### Sprite
+
+### Font
+
+## Component Classes
+
+### Audio
+
+### Button
+
+### Camera
+
+### Transform
+
+### RectTransform
+
+## Renderer Classes
+
+### SpriteRenderer
+
+### BillboardRenderer
+
+### Text
+
+## Collider Classes
+
+### BoxCollider
+
+```cpp
+void this->setBoundary(float left, float right, float up, float down)
+```
+set the area of the **BoxCollider**.
+
+```cpp
+glm::vec2 this->getWidth()
+```
+**returns** - get the BoxCollider width.
+```cpp
+glm::vec2 this->getHeight()
+```
+**returns** - get the BoxCollider height.
+
+### CircleCollider
+
+```cpp
+float this->getRadius()
+```
+**returns** - get the radius of the **CircleCollider**.
+```cpp
+void this->setRadius(float radius)
+```
+set the radius of the **CircleCollider**.
