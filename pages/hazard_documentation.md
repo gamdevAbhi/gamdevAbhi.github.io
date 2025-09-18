@@ -5,7 +5,7 @@
 | Requirements | Installation | Installation | Projects |
 | - GNU Compiler at least 17 version.<br> - Visual Studio Code is recommended. | - Download the engine source code from [itch.io](https://abhijit-biswas.itch.io/hazard-game-engine) or [github](https://github.com/gamdevAbhi/Hazard-Game-Engine.git).<br> - Extract the file to your location. | - Make sure to change the compiler path in “.vscode/tasks.json“ (if using vs code). | Cosmic Mayhem - [Source Code](https://github.com/gamdevAbhi/Cosmic-Mayhem) (Github)|
 
-## Documentation
+## Core Classes
 
 #### GameLoop
 
@@ -38,52 +38,64 @@ It returns the current window size of the application.
 ```cpp
 enum KeyStatus {KEY_NONE, KEY_PRESS, KEY_HOLD, KEY_RELEASE}
 ```
-**KEY_NONE** – if the specific key has no pressing event then this return.  
-**KEY_PRESS** – if the specific key is pressed then this return.  
-**KEY_HOLD** – if the specific key is hold then this return.  
-**KEY_RELEASE** – if the specific key is release then this return.  
+**KEY_NONE** - if the specific key has no pressing event then this return.  
+**KEY_PRESS** - if the specific key is pressed then this return.  
+**KEY_HOLD** - if the specific key is hold then this return.  
+**KEY_RELEASE** - if the specific key is release then this return.  
 
 ```cpp
 Engine::Input::KeyStatus Engine::Input::getKeyStatus(int key)
 // key value is the relative to glfw keys eg. GLFW_KEY_A value is for A key.
 ```
-**returns** – the current status of the key in that frame.
-```cpp
-void Engine::GameLoop::begin()
-```
+**returns** - the current status of the key in that frame.
 
 ```cpp
-void Engine::GameLoop::begin()
+Engine::Input::KeyStatus Engine::Input::getMouseButtonStatus(int mouseButton)
+// mouseButton value is the relative to glfw mouse buttons.
+// eg. GLFW_MOUSE_BUTTON_0 value is for left mouse button key.
 ```
+**returns** - the current status of the mouse button in that frame.
+
+```cpp
+glm::vec2 Engine::Input::getMousePos()
+```
+**returns** - the current position of the mouse in that frame.
 
 #### Time
 
 ```cpp
-void Engine::GameLoop::begin()
+float Engine::Time::getTimeScale()
 ```
+**returns** - the current time scale value.
 
 ```cpp
-void Engine::GameLoop::begin()
+void Engine::Time::setTimeScale(float timeScale)
 ```
+**timeScale** - set the time scale value.
 
 ```cpp
-void Engine::GameLoop::begin()
+float Engine::Time::getDeltaTime()
 ```
+**returns** - the current delta time. Delta time is the time difference between two frames in seconds. It’s value depends on time scale.
 
 ```cpp
-void Engine::GameLoop::begin()
+float Engine::Time::getFixedDeltaTime()
 ```
+**returns** - the current unscaled delta time.
 
 ```cpp
-void Engine::GameLoop::begin()
+int Engine::Time::getLastFPS()
 ```
+**returns** - the previous frame per second.
 
 #### UI
 
 ```cpp
-void Engine::GameLoop::begin()
+glm::vec2 Engine::UI::getResolution()
 ```
+**returns** - the current UI resolution size.
 
 ```cpp
-void Engine::GameLoop::begin()
+void Engine::UI::setResolution(glm::vec2 size)
 ```
+**size** - set the current UI resolution. default value is the window size.
