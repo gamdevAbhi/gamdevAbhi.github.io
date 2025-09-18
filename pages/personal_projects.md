@@ -48,6 +48,7 @@ Hazard Game Engine, created in C++, draws inspiration from Unity Engine seamless
 #### Link:
 - **Source Code**:  [github](https://github.com/gamdevAbhi/Hazard-Game-Engine.git)
 - **Download**: [itch.io](https://abhijit-biswas.itch.io/hazard-game-engine)
+- **Documentation**: [here](hazard_documentation.md)
 - **Tech Demo Game Source Code**: [github](https://github.com/gamdevAbhi/Cosmic-Mayhem.git)
 - **Tech Demo Game Download**: [itch.io](https://abhijit-biswas.itch.io/cosmic-mayhem)
 
