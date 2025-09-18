@@ -134,6 +134,97 @@ this function create a relation between two tags. if relation between two tags e
 
 ### Actor
 
+```cpp
+Engine::Actor* Engine::Actor::createActor(std::string name)
+```
+**returns** - a pointer to a new actor with the name.  
+It creates a new actor with the name. Every actor will have Transform component if creates in this way.
+```cpp
+Engine::Actor* Engine::Actor::createUIActor(std::string name)
+```
+**returns** - a pointer to a new UI actor with the name.  
+It creates a new UI actor with the name. Every actor will have RectTransform component if creates in this way.
+```cpp
+Engine::Actor* Engine::Actor::getActor(std::string name)
+```
+**returns** - a pointer to the actor with the name.  
+It finds actor with the name and return it. If no actor found with that name it will return nullptr.
+
+```
+std::vector<Engine::Actor*> Engine::Actor::getActors(std::string name)
+```
+**returns** - a vector of pointers of the actors with the name.  
+It finds all the actors with the name and return it.
+
+```
+int Engine::Actor::getActorCount()
+```
+**returns** - the number of actors exist in the game.
+
+```
+void Engine::Actor::clearActors()
+```
+It destroy all the actors which manualDestroy set to false before the next frame.
+
+```
+std::string this->getName()
+```
+**returns** - the actor’s name.
+
+```
+void this->setName(std::string name)
+```
+set the actor’s name.
+
+```
+bool this->getActive()
+```
+**returns** - the actor’s active status.
+
+```
+void this->setActive(bool status)
+```
+**status** - set the actor’s active status.  
+**Note** - if actor’s active set to false then the **update()**, **lateUpdate()**, **fixedUpdate()** will not be called and other things like collision detection, rendering will also be ignored.
+
+```
+bool this->getManualDestroyStatus()
+```
+**returns** - the actor’s manual destroy status.
+
+```
+void this->setManualDestroyStatus(bool status)
+```
+**status** - set the actor’s manual destroy status.  
+**Note** - if actor’s manual destroy status set to true then the actor will only be destroyed by **setDestroy()** call or after game loop is break.
+
+```
+void this->setDestroy(bool childIncluded)
+```
+the actor will be destroyed before the next frame start.  
+**Note** - if the **childIncluded** is false then only the actor will be destroyed and it’s child’s parent will nullptr else all childs also be be destroyed.
+
+```
+// T must be derived from Engine::Component class
+T* this->addComponent<T>() 
+```
+**returns** - a pointer of the created component.  
+It creates the component and attach it to the actor. After adding the component **Start()** function is called.
+
+```
+// T must be derived from Engine::Component class
+T* this->getComponent<T>()
+```
+**returns** - a pointer of the added component from the actor.  
+It finds the component added to the actor. if no component is found then nullptr is returned.
+
+```
+// T must be derived from Engine::Component class
+std::vector<T*> this->getComponents<T>() 
+```
+**returns** - a vector of pointers of the added components from the actor.  
+It finds the components added to the actor.
+
 ### Component
 
 ### Collider
@@ -144,7 +235,29 @@ this function create a relation between two tags. if relation between two tags e
 
 ### Sprite
 
+**Sprite** - sprites are the images which are shown the game. The Sprite class constructor take relative path of the desired image.
+
+```cpp
+Sprite(std::string relative_path) // Constructor
+```
+
+```cpp
+void this->destroy()
+```
+this functions destroy the sprite and free the memory. Make sure to remove the sprite from all renderers which are using it.
+
 ### Font
+
+**Font** -  fonts are used for rendering text in the game. The Font class constructor take relative path of the desired font. Font must be in **Truetype format (.ttf)**.
+
+```cpp
+Font(std::string relative_path) // Constructor
+```
+
+```cpp
+void this->destroy()
+```
+this functions destroy the font and free the memory. Make sure to remove the font from all text renderers which are using it.
 
 ## Component Classes
 
