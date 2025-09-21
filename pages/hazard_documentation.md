@@ -265,7 +265,7 @@ It finds the components added to the actor.
 ```cpp
 Engine::Actor* this->getActor()
 ```
-**returns** – the actor this component attached to.
+**returns** - the actor this component attached to.
 
 ```cpp
 void this->setDestroy()
@@ -405,21 +405,538 @@ this functions destroy the font and free the memory. Make sure to remove the fon
 
 ### Audio
 
+```cpp
+enum AudioStatus {NONE, READY, PLAYING, PAUSE}
+```
+**NONE** - it returns if the audio component has no loaded audio.  
+**READY** - it returns if the audio component has loaded audio but playing.  
+**PLAYING** - it returns if the audio is playing.  
+**PAUSE** - it returns if the audio is paused.  
+
+```cpp
+enum AudioFile {NO_TYPE, MP3, WAV}
+```
+**NO_TYPE** - default value.  
+**MP3** - for .mp3 audio files.  
+**WAV** - for .wav audio files.  
+
+```cpp
+void this->load(std::string relative_path, AudioFile fileType)
+```
+load the audio file from the specified path and file type, to check if the file is loaded try **getStatus()** return value should be **AudioStatus::READY**.
+
+```cpp
+void this->unload()
+```
+unload the current audio file.
+
+```cpp
+void this->play(bool shouldLoop)
+```
+play the current loaded audio file.
+
+```cpp
+void this->pause()
+```
+pause the current loaded audio file.
+
+```cpp
+void this->stop()
+```
+stop the current loaded audio file.
+
+```cpp
+AudioStatus this->getStatus()
+```
+**returns** - get the current loaded audio file status.
+
+```cpp
+std::string this->getAudioFilePath()
+```
+**returns** - get the current loaded audio file path.
+
+```cpp
+AudioFile this->getAudioFileType()
+```
+**returns** - get the current loaded audio file type.
+
+```cpp
+int this->getVolume()
+```
+**returns** - get the current loaded audio volume.
+
+```cpp
+void this->setVolume(int volume)
+```
+set the current loaded audio volume.
+
+```cpp
+bool this->isLooping()
+```
+**returns** - get if two loaded audio is looping.
+
 ### Button
+
+```cpp
+enum HoverStatus {HOVER_NONE, HOVER_ENTER, HOVER_STAY, HOVER_EXIT}
+```
+**HOVER_NONE** - it returns if the mouse is hovering on the button.  
+**HOVER_ENTER** - it returns if the mouse is start hovering from this frame.  
+**HOVER_STAY** - it returns if the mouse is hovering for more than one frame.  
+**HOVER_EXIT** - it returns if the mouse is stop hovering from this frame.  
+
+```cpp
+enum ClickStatus {BUTTON_NONE, BUTTON_CLICK, BUTTON_HOLD, BUTTON_RELEASE}
+```
+**BUTTON_NONE** - it returns if the mouse is not clicking the button.  
+**BUTTON_CLICK** - it returns if the mouse is clicking the button from this frame.  
+**BUTTON_HOLD** - it returns if the mouse is clicking the button for more than one frame.  
+**BUTTON_RELEASE** - it returns if the mouse is stop clicking from this frame.  
+
+```cpp
+void this->setSize(float left, float right, float up, float down)
+```
+set the area of the button respective to the scaling.
+
+```cpp
+HoverStatus this->getHoverStatus()
+```
+**returns** - the hover status of the button.
+
+```cpp
+ClickStatus this->getClickStatus()
+```
+**returns** - the click status of the button.
+
+```cpp
+glm::vec2 this->getWidth()
+```
+**returns** - get the button width.
+
+```cpp
+glm::vec2 this->getHeight()
+```
+**returns** - get the button height.
+
+```cpp
+int this->getOrder()
+```
+**returns** - get the button order.
+
+```cpp
+void this->setOrder(int order)
+```
+set the button order.
+
+```cpp
+bool this->getClickableStatus()
+```
+**returns** - get the button clickable status.
+
+```cpp
+void this->setClickableStatus(bool status)
+```
+set the button clickable status.
+
+```cpp
+bool this->getTransparentStatus()
+```
+**returns** - get the button transparent status.
+
+```cpp
+void this->setTransparentStatus(bool status)
+```
+set the button transparent status.
 
 ### Camera
 
+```cpp
+Engine::Camera* Engine::Camera::getRenderCamera()
+```
+**returns** - get the game camera.
+
+```cpp
+glm::vec2 this->getBoundary()
+```
+**returns** - get the camera boundary.
+
+```cpp
+glm::vec3 this->getScreenToWorldPosition(glm::vec2 screenPosition)
+```
+**returns** - get the world position from the screen position.
+
+```cpp
+glm::vec2 this->getWorldToScreenPosition(glm::vec3 worldPosition)
+```
+**returns** - get the screen position from the world position.
+
+```cpp
+glm::vec3 this->getBackgroundColor()
+```
+**returns** - get the camera background color.
+
+```cpp
+void this->setBackgroundColor(glm::vec3 color)
+```
+set the camera background color.
+
+```cpp
+float this->getOrthographicSize()
+```
+**returns** - get the camera orthographical size.
+
+```cpp
+void this->setOrthographicSize(float size)
+```
+set the camera orthographical size.
+
 ### Transform
 
+```cpp
+glm::vec3 this->getLocalUp()
+```
+**returns** - the normalized local up vector.
+
+```cpp
+glm::vec3 this->getLocalRight()
+```
+**returns** - the normalized local right vector.
+
+```cpp
+glm::vec3 this->getLocalForward()
+```
+**returns** - the normalized local forward vector.
+
+```cpp
+glm::vec3 this->getWorldUp()
+```
+**returns** - the normalized world up vector.
+
+```cpp
+glm::vec3 this->getWorldRight()
+```
+**returns** - the normalized world right vector.
+
+```cpp
+glm::vec3 this->getWorldForward()
+```
+**returns** - the normalized world forward vector.
+
+```cpp
+glm::vec3 this->getWorldPosAt(glm::vec3 localOffset)
+```
+**returns** - the world position of the local offset.
+
+```cpp
+glm::vec3 this->getLocalPosition()
+```
+**returns** - the local position of the Transform.
+
+```cpp
+void this->setLocalPosition(glm::vec3 localPosition)
+```
+set the local position of the Transform.
+
+```cpp
+glm::vec3 this->getLocalRotattion()
+```
+**returns** - the local rotation of the Transform.
+
+```cpp
+void this->setLocalRotation(glm::vec3 localRotation)
+```
+set the local rotation of the Transform.
+
+```cpp
+glm::vec3 this->getLocalScale()
+```
+**returns** - the local scale of the Transform.
+
+```cpp
+void this->setLocalScale(glm::vec3 localScale)
+```
+set the local scale of the Transform.
+
+```cpp
+glm::vec3 this->getWorldPosition()
+```
+**returns** - the worldposition of the Transform.
+
+```cpp
+void this->setWorldPosition(glm::vec3 localPosition)
+```
+set the world position of the Transform.
+
+```cpp
+glm::vec3 this->getWorldRotattion()
+```
+**returns** - the world rotation of the Transform.
+
+```cpp
+void this->setWorldRotation(glm::vec3 localRotation)
+```
+set the world rotation of the Transform.
+
+```cpp
+glm::vec3 this->getWorldScale()
+```
+**returns** - the world scale of the Transform.
+
+```cpp
+void this->setWorldScale(glm::vec3 localScale)
+```
+set the world scale of the Transform.
+
+```cpp
+Transform* this->getParent()
+```
+**returns** - the **Transform** parent.
+
+```cpp
+void this->setParent(Transform* parent)
+```
+set the **Transform** parent.
+
+```cpp
+int this->getChildsSize()
+```
+**returns** - the **Transform's** childs size.
+
+```cpp
+Transform* this->getChild(int index)
+```
+**returns** - the **Transform's** child at index position.
+
 ### RectTransform
+
+```cpp
+glm::vec3 this->getAnchorUp()
+```
+**returns** - the normalized anchor up vector.
+
+```cpp
+glm::vec3 this->getAnchorRight()
+```
+**returns** - the normalized anchor right vector.
+
+```cpp
+glm::vec3 this->getAnchorForward()
+```
+**returns** - the normalized anchor forward vector.
+
+```cpp
+glm::vec3 this->getRectUp()
+```
+**returns** - the normalized rectangle up vector.
+
+```cpp
+glm::vec3 this->getRectRight()
+```
+**returns** - the normalized rectangle right vector.
+
+```cpp
+glm::vec3 this->getRectForward()
+```
+**returns** - the normalized rectangle forward vector.
+
+```cpp
+glm::vec2 this->getAnchorAt(glm::vec2 screnPosition)
+```
+**returns** - the anchor origin position from the screen position.
+
+```cpp
+glm::vec3 this->getScreenPosAt(glm::vec2 anchor)
+```
+**returns** - the screen position based on the anchor origin position.
+
+```cpp
+glm::vec3 this->getScreenPosAt(glm::vec3 localOffset)
+```
+**returns** - the screen position of the local offset.
+
+```cpp
+glm::vec2 this->getAnchor()
+```
+**returns** - the anchor origin position.
+
+```cpp
+void this->setAnchor(glm::vec2 anchor)
+```
+set the anchor origin position.
+
+```cpp
+glm::vec3 this->getAnchorRotattion()
+```
+**returns** - the anchor rotation.
+
+```cpp
+void this->setAnchorRotation(glm::vec3 anchorRotation)
+```
+set the anchor rotation.
+
+```cpp
+glm::vec2 this->getAnchorSize()
+```
+**returns** - the anchor size.
+
+```cpp
+void this->setAnchorSize(glm::vec2 anchorSize)
+```
+set the anchor size.
+
+```cpp
+glm::vec3 this->getRectPosition()
+```
+**returns** - the rectangle position in the screen.
+
+```cpp
+glm::vec3 this->getRectRotattion()
+```
+**returns** - the rectangle rotation in the screen.
+
+```cpp
+glm::vec3 this->getRectScale()
+```
+**returns** - the rectangle scale in the screen.
+
+```cpp
+RectTransform* this->getParent()
+```
+**returns** - the **RectTransform** parent.
+
+```cpp
+void this->setParent(RectTransform* parent)
+```
+set the **RectTransform** parent.
+
+```cpp
+int this->getChildsSize()
+```
+**returns** - the **RectTransform's** childs size.
+
+```cpp
+RectTransform* this->getChild(int index)
+```
+**returns** - the **RectTransform's** child at index position.
 
 ## Renderer Classes
 
 ### SpriteRenderer
 
+**Note** - **SpriteRenderer** only works with **Transform** Component.
+
+```cpp
+Sprite* this->getSprite()
+```
+**returns** - the assign **Sprite** to the renderer.
+
+```cpp
+void this->setSprite(Sprite* sprite)
+```
+set the **Sprite** to the renderer. All **SpriteRenderer** have an initialize default sprite.
+
+```cpp
+Sprite* this->getColor()
+```
+**returns** - the assign color to the renderer.
+
+```cpp
+void this->setColor(Sprite* sprite)
+```
+set the color to the renderer.
+
 ### BillboardRenderer
 
+**Note** - **Billboard** only works with **RectTransform** Component.
+
+```cpp
+Sprite* this->getSprite()
+```
+**returns** - the assign **Sprite** to the renderer.
+
+```cpp
+void this->setSprite(Sprite* sprite)
+```
+set the **Sprite** to the renderer. All **Billboard** have an initialize default sprite.
+
+```cpp
+Sprite* this->getColor()
+```
+**returns** - the assign color to the renderer.
+
+```cpp
+void this->setColor(Sprite* sprite)
+```
+set the color to the renderer.
+
 ### Text
+
+```cpp
+enum Alignment {RIGHT, MIDDLE, LEFT}
+```
+**RIGHT** - the text will start from the right of the position.  
+**MIDDLE** - the text middle will be the position.  
+**LEFT** - the text will start from the left of the position.  
+
+```cpp
+Font* this->getFont()
+```
+**returns** - get the font of the **Text**. All **Text** renderer have a default **Font**.
+
+```cpp
+void this->setFont(Font* font)
+```
+set the font to the **Text**.
+
+```cpp
+Alignment this->getAlignment()
+```
+**returns** - get the alignment of the **Text**.
+
+```cpp
+void this->setAlignment(Alignment alignment)
+```
+set the alignment to the **Text**.
+
+```cpp
+std::string this->getText()
+```
+**returns** - get the text of the **Text**.
+
+```cpp
+void this->setText(std::string text)
+```
+set the text to the **Text**.
+
+```cpp
+glm::vec4 this->getTextColor()
+```
+**returns** - get the text color of the **Text**.
+
+```cpp
+void this->setTextColor(glm::vec4 color)
+```
+set the text color to the **Text**.
+
+```cpp
+float this->getScale()
+```
+**returns** - get the text scale of the **Text**.
+
+```cpp
+void this->setScale(float scale)
+```
+set the text scale to the **Text**.
+
+```cpp
+unsigned int this->getCharPerLine()
+```
+**returns** - get the character per line of the **Text**. default value is 0 it means all character will be in the same line.
+
+```cpp
+void this->setCharPerLine(unsigned int chars)
+```
+set the character per line of the **Text**.
 
 ## Collider Classes
 
